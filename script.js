@@ -52,65 +52,36 @@ function playRound(humanChoice, computerChoice) {
 }
 
 // Choice options && Score UI
-
 const rockBtn = document.getElementById("rock");
-const paperBtb = document.getElementById("paper");
+const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
 const playerScoreElement = document.querySelector("#playerScore");
 const cpuScoreElement = document.querySelector("#cpuScore");
 const finalResultElement = document.querySelector("#finalResults");
 
-rockBtn.addEventListener("click", () => {
+// Function to avoid repitition
+function choiceHandler(choice) {
+    if (humanScore >= 5 || computerScore >= 5) return;
 
-    // Run the game
-    playRound("rock", getComputerChoice());
+    playRound(choice, getComputerChoice());
 
-    // Display the score
-    playerScoreElement.textContent = `You: ${humanScore}`;
+    playerScoreElement.textContent = `YOU: ${humanScore}`;
     cpuScoreElement.textContent = `CPU: ${computerScore}`;
 
-    // Display final result
     if (humanScore === 5) {
         finalResultElement.textContent = "You won the game!";
-    } else if (computerScore === 5) {
+        bu
+    }
+    else if (computerScore === 5) {
         finalResultElement.textContent = "You lost the game!";
     }
-})
+}
 
-paperBtb.addEventListener("click", () => {
-    
-    // Run the game
-    playRound("paper", getComputerChoice());
-
-    // Display the score
-    playerScoreElement.textContent = `You: ${humanScore}`;
-    cpuScoreElement.textContent = `CPU: ${computerScore}`;
-
-    // Display final result
-    if (humanScore === 5) {
-        finalResultElement.textContent = "You won the game!";
-    } else if (computerScore === 5) {
-        finalResultElement.textContent = "You lost the game!";
-    }
-})
-
-scissorsBtn.addEventListener("click", () => {
-
-    // Run the game
-    playRound("scissors", getComputerChoice());
-
-    // Display the score
-    playerScoreElement.textContent = `You: ${humanScore}`;
-    cpuScoreElement.textContent = `CPU: ${computerScore}`;
-
-    // Display final result
-    if (humanScore === 5) {
-        finalResultElement.textContent = "You won the game!";
-    } else if (computerScore === 5) {
-        finalResultElement.textContent = "You lost the game!";
-    }
-})
+// Events
+rockBtn.addEventListener("click", () => choiceHandler("rock"));
+paperBtn.addEventListener("click", () => choiceHandler("paper"));
+scissorsBtn.addEventListener("click", () => choiceHandler("scissors"));
 
 
 

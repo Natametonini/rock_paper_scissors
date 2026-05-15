@@ -1,0 +1,52 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.playerChoiceContainer {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.results {
+    margin: 10px;
+    text-align: center;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+h3 {
+    margin: 0px 0px 5px 0px;
+}
+
+.score {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#finalResults {
+    font-size: 18px;
+    margin-top: 10px;
+}
